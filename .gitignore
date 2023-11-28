@@ -1,0 +1,48 @@
+.*
+!.gitignore
+
+# Executables
+*.exe
+*.out
+
+# Object files
+*.o
+*.obj
+
+# Todo file
+todo.txt
+
+# Folders
+.vscode/
+
+# LaTex
+doc/*.aux
+doc/*.fls
+doc/*.log
+doc/*.fdb_latexmk
+doc/*.synctex.gz
+doc/*.dvi
+doc/*.ps
+doc/*-eps-converted-to*
+doc/*.blg
+doc/*.bbl
+doc/*.out
+doc/*.toc
+doc/*.pdf.filepart
+doc/*.synctex(busy)
+doc/*.xdv
+obj/*.aux
+obj/*.fls
+obj/*.log
+obj/*.fdb_latexmk
+obj/*.synctex.gz
+obj/*.dvi
+obj/*.ps
+obj/*-eps-converted-to*
+obj/*.blg
+obj/*.bbl
+obj/*.out
+obj/*.toc
+obj/*.pdf.filepart
+obj/*.synctex(busy)
+obj/*.xdv
