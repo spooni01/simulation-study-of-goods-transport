@@ -1,7 +1,142 @@
-\documentclass{article}
+% Project:     IMS project
+% @file        doc/simulation_study.tex
+% @date        29.11.2023
+% 
+% @brief Simulation study file
+%
+% @author Adam Ližičiar <xlizic00@stud.fit.vutbr.cz>
+
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[slovak]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm, top=3cm, text={17cm, 24cm}]{geometry}
+\usepackage{times}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[unicode]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue, 
+    citecolor=blue
+}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{
+  backgroundcolor=\color{white},
+  basicstyle=\footnotesize,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{mygreen},
+  escapeinside={\%*}{*)},
+  keywordstyle=\color{blue},
+  stringstyle=\color{mymauve},
+  tabsize=4
+}
+
 
 \begin{document}
 
-Hello World
+	%%%%% Titulná stránka %%%%%
+	\begin{titlepage}
+		\begin{center}
+			\includegraphics[width=0.77\linewidth]{res/logo_FIT.pdf} \\
+
+			\vspace{\stretch{0.382}}
+
+			\scalebox{2}{\Huge{Simulačná štúdia}} \\
+			\LARGE{Transport tovaru tranzitnou spoločnosťou DaliTrans} \\
+			\vspace{\stretch{0.618}}
+		\end{center}
+
+		\begin{minipage}[b]{0.4 \textwidth}
+			\raggedright
+			{\Large \today}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[b]{0.6 \textwidth}
+			\raggedleft
+			\Large
+			Adam Ližičiar (xlizic00)\\
+		\end{minipage}		
+	\end{titlepage}
+
+	%%%%% Obsah %%%%%
+	\pagenumbering{roman}
+	\setcounter{page}{1}
+	\tableofcontents
+	\clearpage
+
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	
+	%%%%% Úvod %%%%%
+	\section{Úvod}
+	Práca sa~zaoberá rozvozom tovaru tranzitnej spoločnosti DaliTrans.
+    Vďaka tomuto modelu a~simulačnému experimentu je~možné pozorovať
+    efektívnosť aktuálneho systému a~nájsť spôsoby na~zefektívnenie
+    tohto systému.\newline
+    V~reálnom systéme je~náročné zisťovať ekonomické rozdiely, pretože
+    systém obsahuje veľké množstvo entít a~faktorov, ktoré s~nimi súvisia.
+
+    %%%%% Fakty %%%%%
+	\section{Fakty}
+	Informácie o~trantiznej spoločnosti boli získané z~jej oficiálnej
+    webstránky, štatistických údajov spoločnosti a~následne validované
+    majiteľom firmy Daliborom Janegom. 
+
+    \subsection{Textová schéma modelu}
+    Spoločnosť je~zameraná na~vnútroštátnu i~zahraničnú prepravu,
+    preto model opisuje obdobie
+    jedného mesiaca. K~aktuálnemu dátumu je~v spoločnosti
+    267~tranzitných vozidiel (väčšina Renault Trucks
+    520 T-High). Tieto vozidlá majú spotrebu pri~naloženom prívese
+    34~litrov na~100 kilometrov a~pri~prázdnom prívese 22~litrov
+    na~100 kilometrov.\newline
+    Jazdy sú~už~vopred tak naplánované, že~po~dokončení jazdy je~šofér
+    vyslaný na~ďaľšiu jazdu, ku~ktorej sa~dostane
+    za~64~minút ±~23~minút.
+    Dovolenky alebo ochorenia zamestnancov nie~je~potrebné riešiť
+    z~dôvodu dostatočného počtu voľných zamestnancov a~taktiež
+    podrobnému naplánovaniu jázd, kedy sa každý vodič vráti po~približne
+    5~dňoch v~práci na~depo (kamión prevezme ďalší zamestnanec). Počet
+    voľných zamestnancov nie~je~potrebné riešiť z~dôvodu, že~ich 
+    je~dostatočný počet a~v~ojedinelom prípade, kedy by nikto zo~zamestnancov
+    nebol dostupný, sú~volaní externí šoféri. Každý mesiac
+    je~vykonaných 5083 jázd  ± 256 jázd. Pravdepodobnosť poruchy
+    sú 2,3~\%. Jej následná oprava trvá 2 hodiny.\newline
+    Prechod k zákazníkovi od miesta nakladania trvá priemerne 
+    84~minút ±~23~minút. Následne prebehne naloženie (46~minút ±~21~minút).
+    Po naložení sa vodič vyberie na jazdu, ktorá trvá 11 hodín ± 8 hodín
+    (v~čase sú~započítané aj povinné pauzy podľa štandartov Európskej
+    únie).
+    Vykladanie zaberie 28 minút ± 14 minút. Pri~prevoze je~vždy v~prívese
+    tovar iba od~jedného zákazníka.\newline
+
+    %%%%% Koncepcia a spôsob riešenia %%%%%
+	\section{Koncepcia a spôsob riešenia}
+	todo 
+
+    %%%%% Testovanie a experimenty %%%%%
+	\section{Testovanie a experimenty}
+	todo 
+
+    %%%%% Záver %%%%%
+	\section{Záver}
+	todo 
+
+	%%%%% Referencie %%%%%
+	\section{Referencie}
+	todo
+
+	%%%%% Prílohy %%%%%
+	\clearpage
+	\section{Prílohy}
 
 \end{document}
