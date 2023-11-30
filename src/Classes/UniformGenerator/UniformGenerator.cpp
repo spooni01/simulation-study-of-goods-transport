@@ -3,9 +3,4 @@
  *  Author:     Adam Ližičiar  *
  * * * * * * * * * * * * * * * */
 
-#include "Libraries/main.hpp"
-
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
-}
+#include "UniformGenerator.hpp"
