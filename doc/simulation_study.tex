@@ -51,7 +51,7 @@
 			\vspace{\stretch{0.382}}
 
 			\scalebox{2}{\Huge{Simulačná štúdia}} \\
-			\LARGE{Transport tovaru tranzitnou spoločnosťou DaliTrans} \\
+			\LARGE{Transport tovaru tranzitnou spoločnosťou DALITRANS, s.r.o.} \\
 			\vspace{\stretch{0.618}}
 		\end{center}
 
@@ -78,25 +78,25 @@
 	
 	%%%%% Úvod %%%%%
 	\section{Úvod}
-	Práca sa~zaoberá rozvozom tovaru tranzitnej spoločnosti DaliTrans.
+	Práca sa~zaoberá rozvozom tovaru tranzitnej spoločnosti DALITRANS, s.r.o. .
     Vďaka tomuto modelu a~simulačnému experimentu je~možné pozorovať
     efektívnosť aktuálneho systému a~nájsť spôsoby na~zefektívnenie
-    tohto systému.\newline
+    tohto systému. Spoločnosť je~zameraná na~vnútroštátnu i~zahraničnú prepravu,
+    preto tento model opisuje obdobie jedného mesiaca v 30 dňovom formáte. \newline
     V~reálnom systéme je~náročné zisťovať ekonomické rozdiely, pretože
     systém obsahuje veľké množstvo entít a~faktorov, ktoré s~nimi súvisia.
 
     %%%%% Fakty %%%%%
+    \newpage
 	\section{Fakty}
-	Informácie o~trantiznej spoločnosti boli získané z~jej oficiálnej
+	Informácie o~tranzitnej spoločnosti boli získané z~jej oficiálnej
     webstránky, štatistických údajov spoločnosti a~následne validované
     majiteľom firmy Daliborom Janegom. 
 
     \subsection{Textová schéma modelu}
-    Spoločnosť je~zameraná na~vnútroštátnu i~zahraničnú prepravu,
-    preto model opisuje obdobie
-    jedného mesiaca. K~aktuálnemu dátumu je~v spoločnosti
+    K~aktuálnemu dátumu je~v spoločnosti
     267~tranzitných vozidiel (väčšina Renault Trucks
-    520 T-High). Tieto vozidlá majú spotrebu pri~naloženom prívese
+    520 T-High). Tieto vozidlá majú kombinovanú spotrebu pri~naloženom prívese
     34~litrov na~100 kilometrov a~pri~prázdnom prívese 22~litrov
     na~100 kilometrov.\newline
     Jazdy sú~už~vopred tak naplánované, že~po~dokončení jazdy je~šofér
@@ -110,33 +110,61 @@
     je~dostatočný počet a~v~ojedinelom prípade, kedy by nikto zo~zamestnancov
     nebol dostupný, sú~volaní externí šoféri. Každý mesiac
     je~vykonaných 5083 jázd  ± 256 jázd. Pravdepodobnosť poruchy
-    sú 2,3~\%. Jej následná oprava trvá 2 hodiny.\newline
-    Prechod k zákazníkovi od miesta nakladania trvá priemerne 
-    84~minút ±~23~minút. Následne prebehne naloženie (46~minút ±~21~minút).
-    Po naložení sa vodič vyberie na jazdu, ktorá trvá 11 hodín ± 8 hodín
+    kamióna je 2,3~\%. Jej následná oprava trvá 2 hodiny.\newline
+    Prechod k prvému zákazníkovi na miesto nakladania trvá priemerne 
+    64~minút ±~23~minút. Následne prebehne naloženie (46~minút ±~21~minút).
+    Po naložení sa vodič vyberie na jazdu, ktorá trvá 14 hodín ± 10 hodín
     (v~čase sú~započítané aj povinné pauzy podľa štandartov Európskej
-    únie).
-    Vykladanie zaberie 28 minút ± 14 minút. Pri~prevoze je~vždy v~prívese
+    únie). 
+    Po~vyložení tovaru (28 minút ± 14 minút) si~šofér spraví 6~hodinovú prestávku
+    a~pokračuje k~ďalšiemu zákazníkovi (64~minút ±~23~minút). Pri~prevoze je~vždy v~prívese
     tovar iba od~jedného zákazníka.\newline
 
     %%%%% Koncepcia a spôsob riešenia %%%%%
-	\section{Koncepcia a spôsob riešenia}
-	todo 
+	\newpage
+    \section{Koncepcia a~spôsob riešenia}
+	Model je~vytvorený v~programovacom jazyku C++. Na~simuláciu je~použitá knižnica
+    SIMLIB, ktorá obsahuje všetky časti potrebné k~implementácií modelu.
+
+    \subsection{Implementácia}
+    \subsubsection{Hlavný súbor}
+    \subsubsection{Použité triedy}
+    // todo class diagram
+    \subsubsection{Knižnice}
+    \subsection{Spúštanie simulačného modulu}
+    //todo make atd
 
     %%%%% Testovanie a experimenty %%%%%
+    \newpage
 	\section{Testovanie a experimenty}
 	todo 
+    \subsection{Experimenty}
+    \subsubsection{Overenie validity}
+    \subsubsection{Maximálny počet jázd}
+    \subsubsection{Minimálny počet kamiónov na~aktuálny počet jázd}
+    \subsubsection{Zvládnuteľnosť systému pri~viacnásobnom zvýšení počtu kamiónov a~jázd}
 
     %%%%% Záver %%%%%
+    \newpage
 	\section{Záver}
 	todo 
 
 	%%%%% Referencie %%%%%
+    \newpage
 	\section{Referencie}
 	todo
 
 	%%%%% Prílohy %%%%%
-	\clearpage
+    \newpage
 	\section{Prílohy}
+    \subsection{Petriho sieť}
+	\label{subsection:petri_net}
+	\begin{figure}[!ht]
+		\centering
+		\vspace{1cm}
+		\includegraphics[width=0.95\linewidth]{res/petri_net.png}
+		\caption{Petriho sieť modelu}
+		\label{figure:petri_net}
+	\end{figure}
 
 \end{document}
