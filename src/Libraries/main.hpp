@@ -4,6 +4,7 @@
  * * * * * * * * * * * * * * * */
 
 #include <iostream>
+#include <simlib.h>
 
 /*
  *  Program files

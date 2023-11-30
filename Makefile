@@ -24,7 +24,7 @@ RMDIR 		= rm -rf
 ### Build BIN file
 all: create_directories build
 build: 
-	$(CXX) $(CXX_FLAGS) $(SRC_FILES) -o $(BIN_DIR)/$(OUTPUT_NAME)
+	$(CXX) $(CXX_FLAGS) $(SRC_FILES) -o $(BIN_DIR)/$(OUTPUT_NAME) -lsimlib
 
 
 ### Run default
