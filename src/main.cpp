@@ -10,9 +10,13 @@
  */
 int main() {
 
-    UniformGenerator uG;
-    
-    std::cout << uG.generate(10, 5) << std::endl;
+    UniformGenerator uniformDistribution;
+    MonthTimer monthTimer;
+    monthTimer.Behavior();
+
+    std::cout << uniformDistribution.generate(10, 5) << std::endl;
+
+
     return 0;
 
 }
