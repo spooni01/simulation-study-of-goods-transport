@@ -29,7 +29,7 @@ build:
 
 ### Run default
 run:
-	./$(BIN_DIR)/$(OUTPUT_NAME)
+	./$(BIN_DIR)/$(OUTPUT_NAME) --trucks 267 --journeys 5083
 
 
 ### Create directories 
