@@ -7,6 +7,14 @@
 #include <simlib.h>
 #include <getopt.h>
 
+
+/*
+ *  STATIC VARIABLES
+ */
+static const int NUM_OF_SIMULATION_ATTEMPS  = 3;
+static const double TIME_SIMULATION_START   = 0.0;
+static const double TIME_SIMULATION_END     = 43200.0;
+
 /*
  *  Header files
  */
@@ -16,6 +24,7 @@
 #include "../Classes/Truck/Truck.hpp"
 #include "../Classes/UniformGenerator/UniformGenerator.hpp"
 
+
 /*
  *  Program files
  */
@@ -24,3 +33,11 @@
 #include "../Classes/MonthTimer/MonthTimer.cpp"
 #include "../Classes/Truck/Truck.cpp"
 #include "../Classes/UniformGenerator/UniformGenerator.cpp"
+
+
+/*
+ *  Functins in main.cpp
+ */
+int main(int argc, char *argv[]);
+void printStartOfSimulation(Arguments *args);
+void printEndOfSimulation();
