@@ -21,7 +21,13 @@ int main(int argc, char *argv[]) {
         
         std::cout << "---------------------- SIMULATION NUMBER " << i << " -----------------------\n" << std::endl;
         Init(TIME_SIMULATION_START, TIME_SIMULATION_END);
-        Run();
+
+		(new ModelActivity(
+			args.trucks,
+			args.journeys
+        ))->Activate();
+		Run();
+		SIMLIB_statistics.Output(); 
 
 	}
 
