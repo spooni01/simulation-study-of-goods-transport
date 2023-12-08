@@ -6,7 +6,8 @@
 #include <iostream>
 #include <simlib.h>
 #include <getopt.h>
-
+#include <random>
+#include <chrono>
 
 /*
  *  STATIC VARIABLES
@@ -14,6 +15,7 @@
 static const int NUM_OF_SIMULATION_ATTEMPS  = 3;
 static const double TIME_SIMULATION_START   = 0.0;
 static const double TIME_SIMULATION_END     = 43200.0;
+static const double JOURNEY_DEVIATION       = 23.0;
 
 /*
  *  Header files

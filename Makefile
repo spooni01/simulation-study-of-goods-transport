@@ -5,7 +5,7 @@
 # Author: 		Adam Ližičiar <xlizic00@stud.fit.vutbr.cz>	#
 #############################################################	
 
-OUTPUT_NAME = model
+OUTPUT_NAME = simulation
 SRC_FILES 	= src/main.cpp
 CXX 		= g++
 CXX_FLAGS 	= -std=c++20 -Wall -pedantic -Werror -static-libstdc++
@@ -30,7 +30,7 @@ build:
 ### Run default
 run:
 	./$(BIN_DIR)/$(OUTPUT_NAME) --trucks 267 --journeys 5083
-
+	
 
 ### Create directories 
 create_directories: $(OBJ_DIR) $(BIN_DIR)

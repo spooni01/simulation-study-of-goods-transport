@@ -17,8 +17,15 @@
     private:
 
         Store *trucks;
-        unsigned long *journeys;
-        void printStartOfMonth(double journeys);
+        unsigned long *journeysForSimulation = new unsigned long;
+
+        Stat *statTruckJourneyForCargo;
+        Stat *statTruckLoadingCargo;
+        Stat *statTruckJourneyWithCargo;
+        Stat *statTruckUnloadingCargo;
+        Stat *statTruckFuel;
+
+        void printStartOfMonth();
         void printEndOfMonth();
 
     };

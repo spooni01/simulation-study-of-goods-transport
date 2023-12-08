@@ -15,22 +15,20 @@ int main(int argc, char *argv[]) {
     args.parse(argc, argv); 
     
     // Do simulation
+    UniformGenerator uniformGenerator;
     printStartOfSimulation(&args);
 
     for (int i = 1; i <= NUM_OF_SIMULATION_ATTEMPS; i++) {
         
-        std::cout << "---------------------- SIMULATION NUMBER " << i << " -----------------------\n" << std::endl;
+        std::cout << "\n\n\n---------------------- SIMULATION NUMBER " << i << " -----------------------\n" << std::endl;
         Init(TIME_SIMULATION_START, TIME_SIMULATION_END);
 
-		(new ModelActivity(
-			args.trucks,
-			args.journeys
-        ))->Activate();
+		(new ModelActivity(args.trucks, uniformGenerator.generate(args.journeys, JOURNEY_DEVIATION)))->Activate();
 		Run();
-		SIMLIB_statistics.Output(); 
-
+		SIMLIB_statistics.Output();
+        
 	}
-
+    
     printEndOfSimulation();
 
     // Exit
@@ -43,6 +41,7 @@ int main(int argc, char *argv[]) {
  *	Write start of simulation in the STDOUT
  */
 void printStartOfSimulation(Arguments *args) {
+
     std::cout   << "------------------------------------------------------------------\n"
                 << "|                      START OF SIMULATION                       |\n"
                 << "------------------------------------------------------------------\n"
@@ -50,14 +49,17 @@ void printStartOfSimulation(Arguments *args) {
                 << "| Number of journeys: " << args->journeys << "\n"
                 << "------------------------------------------------------------------\n"
                 << std::endl;
+
 }
 
 /*
  *	Write end of simulation in the STDOUT
  */
 void printEndOfSimulation() {
-    std::cout   << "------------------------------------------------------------------\n"
+
+    std::cout   << "\n\n\n------------------------------------------------------------------\n"
                 << "|                      END OF SIMULATION                         |\n"
                 << "------------------------------------------------------------------\n"
                 << std::endl;
+
 }
