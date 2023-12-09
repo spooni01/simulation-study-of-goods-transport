@@ -48,7 +48,38 @@ ModelActivity::~ModelActivity() {
  *  Do simulation
  */
 void ModelActivity::Behavior() {
-	
+
+	MonthTimer *monthTimer = new MonthTimer(this);
+
+	// Do all journeys
+	while (*journeysForSimulation > 0) {
+		Enter(*trucks, 1);
+
+		// If journey is done
+		if(*journeysForSimulation == 0) {
+			Leave(*trucks, 1);
+			break;
+		}
+
+		*journeysForSimulation -= 1;
+
+		// Do journey
+		(new Truck(
+			trucks,
+			statTruckJourneyForCargo,
+			statTruckLoadingCargo,
+			statTruckJourneyWithCargo,
+			statTruckUnloadingCargo,
+			statTruckFuel
+		))->Activate();
+
+	}
+
+	// Wait for trucks ends their journeys
+	Enter(*trucks, trucks->Capacity());
+	Leave(*trucks, trucks->Capacity());
+
+	delete monthTimer;
 }
 
 
@@ -83,7 +114,5 @@ void ModelActivity::printEndOfMonth() {
 	statTruckJourneyWithCargo->Output();
 	statTruckUnloadingCargo->Output();
     statTruckFuel->Output();
-
-	std::cout << "////////////////////////////////////////////////////////////\n";
 
 }
