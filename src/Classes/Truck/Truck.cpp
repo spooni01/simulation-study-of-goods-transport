@@ -17,33 +17,30 @@ Truck::Truck(Store *trucks, Stat *statTruckJourneyForCargo, Stat *statTruckLoadi
  *  Journey of truck
  */
 void Truck::Behavior() {
-    UniformGenerator ug; 
 
-	double truckJourneyForCustomer = ug.generate(
-		TRUCK_JOURNEY_FOR_CUSTOMER, TRUCK_JOURNEY_FOR_CUSTOMER_DEVIATION
-	);
-	(*statTruckJourneyForCargo)(truckJourneyForCustomer);
-	Wait(truckJourneyForCustomer);
+	// Jorney to customer
+	double truckJourneyToCustomer = uniformGenerator.generate(TRUCK_JOURNEY_FOR_CUSTOMER, TRUCK_JOURNEY_FOR_CUSTOMER_DEVIATION);
+	(*statTruckJourneyForCargo)(truckJourneyToCustomer);
+	Wait(truckJourneyToCustomer);
 
-	double truckLoading = ug.generate(
-		TRUCK_LOADING, TRUCK_LOADING_DEVIATION
-	);
+	// Loading truck
+	double truckLoading = uniformGenerator.generate(TRUCK_LOADING, TRUCK_LOADING_DEVIATION);
 	(*statTruckLoadingCargo)(truckLoading);
 	Wait(truckLoading);
 
-    double truckJourney = ug.generate(
-		TRUCK_JOURNEY, TRUCK_JOURNEY_DEVIATION
-	);
+	// Truck journey
+    double truckJourney = uniformGenerator.generate(TRUCK_JOURNEY, TRUCK_JOURNEY_DEVIATION);
 	(*statTruckJourneyWithCargo)(truckJourney);
 	Wait(truckJourney);
 
-    double truckUnloading = ug.generate(
-		TRUCK_UNLOADING, TRUCK_UNLOADING_DEVIATION
-	);
+	// Unloading truck
+    double truckUnloading = uniformGenerator.generate(TRUCK_UNLOADING, TRUCK_UNLOADING_DEVIATION);
 	(*statTruckUnloadingCargo)(truckUnloading);
 	Wait(truckUnloading);
 
+	// Pause
     Wait(TRUCK_PAUSE);
 
 	Leave(*trucks, 1);
+	
 }

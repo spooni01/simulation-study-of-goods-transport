@@ -15,7 +15,6 @@ int main(int argc, char *argv[]) {
     args.parse(argc, argv); 
     
     // Do simulation
-    UniformGenerator uniformGenerator;
     printStartOfSimulation(&args);
 
     for (int i = 1; i <= NUM_OF_SIMULATION_ATTEMPS; i++) {

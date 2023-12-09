@@ -17,6 +17,7 @@ static const double TIME_SIMULATION_START   = 0.0;
 static const double TIME_SIMULATION_END     = 43200.0;
 static const double JOURNEY_DEVIATION       = 35.9;
 
+
 /*
  *  Header files
  */
@@ -25,6 +26,12 @@ static const double JOURNEY_DEVIATION       = 35.9;
 #include "../Classes/MonthTimer/MonthTimer.hpp"
 #include "../Classes/Truck/Truck.hpp"
 #include "../Classes/UniformGenerator/UniformGenerator.hpp"
+
+
+/*
+ *  Global variables
+ */
+UniformGenerator uniformGenerator;
 
 
 /*
@@ -43,3 +50,4 @@ static const double JOURNEY_DEVIATION       = 35.9;
 int main(int argc, char *argv[]);
 void printStartOfSimulation(Arguments *args);
 void printEndOfSimulation();
+
