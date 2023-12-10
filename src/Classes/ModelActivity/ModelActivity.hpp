@@ -23,7 +23,8 @@
         Stat *statTruckLoadingCargo;
         Stat *statTruckJourneyWithCargo;
         Stat *statTruckUnloadingCargo;
-        Stat *statTruckFuel;
+        Stat *statTruckFuelFull;
+        Stat *statTruckFuelEmpty;
 
         void printStartOfMonth();
         void printEndOfMonth();

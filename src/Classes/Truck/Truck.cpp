@@ -9,8 +9,8 @@
 /*
  *  Set initial data
  */
-Truck::Truck(Store *trucks, Stat *statTruckJourneyForCargo, Stat *statTruckLoadingCargo, Stat *statTruckJourneyWithCargo, Stat *statTruckUnloadingCargo, Stat *statTruckFuel) :
-	trucks(trucks), statTruckJourneyForCargo(statTruckJourneyForCargo), statTruckLoadingCargo(statTruckLoadingCargo), statTruckJourneyWithCargo(statTruckJourneyWithCargo), statTruckUnloadingCargo(statTruckUnloadingCargo), statTruckFuel(statTruckFuel) {}
+Truck::Truck(Store *trucks, Stat *statTruckJourneyForCargo, Stat *statTruckLoadingCargo, Stat *statTruckJourneyWithCargo, Stat *statTruckUnloadingCargo, Stat *statTruckFuelFull, Stat *statTruckFuelEmpty) :
+	trucks(trucks), statTruckJourneyForCargo(statTruckJourneyForCargo), statTruckLoadingCargo(statTruckLoadingCargo), statTruckJourneyWithCargo(statTruckJourneyWithCargo), statTruckUnloadingCargo(statTruckUnloadingCargo), statTruckFuelFull(statTruckFuelFull), statTruckFuelEmpty(statTruckFuelEmpty) {}
 
 
 /*
@@ -41,6 +41,15 @@ void Truck::Behavior() {
 	// Pause
     Wait(TRUCK_PAUSE);
 
+	// Empty cargo fuel stats
+	double emptyCargoFuel = uniformGenerator.generate(TRUCK_DISTANCE_EMPTY_CARGO, TRUCK_DISTANCE_EMPTY_CARGO_DEVIATION);
+	(*statTruckFuelEmpty)(emptyCargoFuel / 100.0 * TRUCK_CONSUMPTION_EMPTY_CARGO); 
+
+	// Full cargo fuel stats
+	double fullCargoFuel = uniformGenerator.generate(TRUCK_DISTANCE_FULL_CARGO, TRUCK_DISTANCE_FULL_CARGO_DEVIATION);
+	(*statTruckFuelFull)(fullCargoFuel / 100.0 * TRUCK_CONSUMPTION_FULL_CARGO); 
+
+
 	Leave(*trucks, 1);
-	
+
 }

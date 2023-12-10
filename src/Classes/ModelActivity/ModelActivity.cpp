@@ -20,7 +20,8 @@ ModelActivity::ModelActivity(unsigned long trucks, double numOfJurneys) {
     statTruckLoadingCargo =     new Stat("Truck time: loading cargo");
     statTruckJourneyWithCargo = new Stat("Truck time: journey with cargo");
     statTruckUnloadingCargo =   new Stat("Truck time: unloading cargo");
-    statTruckFuel =             new Stat("Truck fuel");
+    statTruckFuelFull =         new Stat("Truck fuel: Full cargo");
+	statTruckFuelEmpty =		new Stat("Truck fuel: Empty cargo");
 
 	this->printStartOfMonth();
 
@@ -39,7 +40,8 @@ ModelActivity::~ModelActivity() {
 	delete statTruckLoadingCargo;
 	delete statTruckJourneyWithCargo;
 	delete statTruckUnloadingCargo;
-	delete statTruckFuel;
+	delete statTruckFuelFull;
+	delete statTruckFuelEmpty;
 
 }
 
@@ -70,7 +72,8 @@ void ModelActivity::Behavior() {
 			statTruckLoadingCargo,
 			statTruckJourneyWithCargo,
 			statTruckUnloadingCargo,
-			statTruckFuel
+			statTruckFuelFull,
+			statTruckFuelEmpty
 		))->Activate();
 
 	}
@@ -113,6 +116,7 @@ void ModelActivity::printEndOfMonth() {
 	statTruckLoadingCargo->Output();
 	statTruckJourneyWithCargo->Output();
 	statTruckUnloadingCargo->Output();
-    statTruckFuel->Output();
+    statTruckFuelFull->Output();
+	statTruckFuelEmpty->Output();
 
 }
