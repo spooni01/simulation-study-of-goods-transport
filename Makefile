@@ -18,7 +18,7 @@ RMDIR 		= rm -rf
 
 #############################################################
 
-.PHONY: all run doc clean cleanall
+.PHONY: all run doc clean cleanall bibtex
 
 
 ### Build BIN file
@@ -47,6 +47,8 @@ $(BIN_DIR):
 ### Create documentation
 doc: $(OBJ_DIR) $(DOC_DIR)/$(DOC).tex
 	cd $(DOC_DIR) && pdflatex $(DOC).tex
+	make bibtex
+	cd $(DOC_DIR) && pdflatex $(DOC).tex
 	cd $(DOC_DIR) && pdflatex $(DOC).tex
 	cd $(DOC_DIR) && pdflatex $(DOC).tex
 	cd ../
@@ -62,6 +64,10 @@ doc: $(OBJ_DIR) $(DOC_DIR)/$(DOC).tex
 	if [ -e $(DOC_DIR)/$(DOC).out ]; then mv $(DOC_DIR)/$(DOC).out $(OBJ_DIR)/$(DOC).out; fi
 	if [ -e $(DOC_DIR)/$(DOC).toc ]; then mv $(DOC_DIR)/$(DOC).toc $(OBJ_DIR)/$(DOC).toc; fi
 	if [ -e $(DOC_DIR)/$(DOC).pdf.filepart ]; then mv $(DOC_DIR)/$(DOC).pdf.filepart $(OBJ_DIR)/$(DOC).pdf.filepart; fi
+
+# Bibtex
+bibtex: $(DOC_DIR)/bibliography/$(DOC).bib
+	cd $(DOC_DIR) && bibtex $(DOC)
 
 
 ### Clean 

@@ -46,7 +46,7 @@
 	%%%%% Titulná stránka %%%%%
 	\begin{titlepage}
 		\begin{center}
-			\includegraphics[width=0.77\linewidth]{res/logo_FIT.pdf} \\
+			\includegraphics[width=0.77\linewidth]{resources/logo_FIT.pdf} \\
 
 			\vspace{\stretch{0.382}}
 
@@ -116,7 +116,7 @@
     Po naložení sa vodič vyberie na jazdu, ktorá trvá 14 hodín ± 10 hodín
     (v~čase sú~započítané aj povinné pauzy podľa štandartov Európskej
     únie). Dĺžka trasy je 1~123~km  ± 878~km.
-    Po~vyložení tovaru (28 minút ± 14 minút) si~šofér spraví 6~hodinovú prestávku
+    Po~vyložení tovaru (28 minút ± 14 minút) si~šofér spraví 6~hodinovú presourcestávku
     a~pokračuje k~ďalšiemu zákazníkovi (64~minút ±~23~minút). Pri~prevoze je~vždy v~prívese
     tovar iba od~jedného zákazníka.\newline
 
@@ -147,7 +147,7 @@
 
     \subsubsection{Použité triedy}
     \paragraph{Arguments}
-    todo
+    todo \cite[snímka 28]{IMS_prezentácia}
     \paragraph{ModelActivity}
     todo
     \paragraph{MonthTimer}
@@ -177,10 +177,12 @@
 	\section{Záver}
 	todo 
 
-	%%%%% Referencie %%%%%
+	%%%%% Literatúra %%%%%
     \newpage
-	\section{Referencie}
-	todo
+	\section{Literatúra}
+	\bibliographystyle{bibliography/czechiso}
+    \renewcommand{\refname}{}
+	\bibliography{bibliography/simulation_study}
 
 	%%%%% Prílohy %%%%%
     \newpage
@@ -190,7 +192,7 @@
 	\begin{figure}[!ht]
 		\centering
 		\vspace{1cm}
-		\includegraphics[width=0.95\linewidth]{res/petri_net.png}
+		\includegraphics[width=0.95\linewidth]{resources/petri_net.png}
 		\caption{Petriho sieť modelu}
 		\label{figure:petri_net}
 	\end{figure}

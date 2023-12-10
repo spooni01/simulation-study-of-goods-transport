@@ -8,6 +8,7 @@
 #ifndef IMS_ARGUMENTS_HEADER_FILE
 #define IMS_ARGUMENTS_HEADER_FILE
 
+
     class Arguments {
     public:
 
@@ -18,5 +19,6 @@
         void displayHelp();                 // Display help on STDOUT
 
     };
+
 
 #endif
