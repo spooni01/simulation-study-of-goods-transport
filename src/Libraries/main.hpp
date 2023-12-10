@@ -8,6 +8,8 @@
 #include <getopt.h>
 #include <random>
 #include <chrono>
+#include <time.h>
+#include <stdlib.h>
 
 /*
  *  STATIC VARIABLES

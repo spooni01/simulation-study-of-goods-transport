@@ -49,7 +49,13 @@ void Truck::Behavior() {
 	double fullCargoFuel = uniformGenerator.generate(TRUCK_DISTANCE_FULL_CARGO, TRUCK_DISTANCE_FULL_CARGO_DEVIATION);
 	(*statTruckFuelFull)(fullCargoFuel / 100.0 * TRUCK_CONSUMPTION_FULL_CARGO); 
 
+	// Check if there was failure
+	srand(time(NULL));
+    if (rand() < (RAND_MAX * 0.023)) {
+        Wait(TRUCK_REPAIR_TIME);
+    }
 
+	// Leave truck
 	Leave(*trucks, 1);
 
 }

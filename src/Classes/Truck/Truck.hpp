@@ -3,6 +3,8 @@
  *  Author:     Adam Ližičiar  *
  * * * * * * * * * * * * * * * */
 
+#include <time.h>
+#include <stdlib.h>
 #include "../UniformGenerator/UniformGenerator.hpp"
 
 #ifndef IMS_TRUCK_HEADER_FILE
@@ -54,6 +56,9 @@ private:
 	const double TRUCK_CONSUMPTION_EMPTY_CARGO = 22;
 	const double TRUCK_DISTANCE_EMPTY_CARGO = 85.0; 
 	const double TRUCK_DISTANCE_EMPTY_CARGO_DEVIATION = 32.9;
+
+	// Truck repair (minutes)
+	const double TRUCK_REPAIR_TIME = 120;
 
     // Stats
 	Store *trucks;
