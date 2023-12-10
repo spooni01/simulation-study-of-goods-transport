@@ -49,8 +49,8 @@ private:
 
 	// Truck fuel full cargo statistics (l/100km, km/h, percentage)
 	const double TRUCK_CONSUMPTION_FULL_CARGO = 34;
-	const double TRUCK_DISTANCE_FULL_CARGO = 1123.0; 
-	const double TRUCK_DISTANCE_FULL_CARGO_DEVIATION = 78.2;
+	const double TRUCK_DISTANCE_FULL_CARGO = 605.0; 
+	const double TRUCK_DISTANCE_FULL_CARGO_DEVIATION = 69.6;
 
 	// Truck fuel empty cargo statistics (l/100km, kkm/h, percentage)
 	const double TRUCK_CONSUMPTION_EMPTY_CARGO = 22;

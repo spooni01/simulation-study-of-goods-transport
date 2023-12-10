@@ -20,8 +20,8 @@ ModelActivity::ModelActivity(unsigned long trucks, double numOfJurneys) {
     statTruckLoadingCargo =     new Stat("Truck time: loading cargo");
     statTruckJourneyWithCargo = new Stat("Truck time: journey with cargo");
     statTruckUnloadingCargo =   new Stat("Truck time: unloading cargo");
-    statTruckFuelFull =         new Stat("Truck fuel: Full cargo");
-	statTruckFuelEmpty =		new Stat("Truck fuel: Empty cargo");
+    statTruckFuelFull =         new Stat("Truck fuel: full cargo");
+	statTruckFuelEmpty =		new Stat("Truck fuel: empty cargo");
 
 	this->printStartOfMonth();
 
